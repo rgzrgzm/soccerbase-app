@@ -14,6 +14,14 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+    screens: {
+      'xs': '0px',     // Extra small (dispositivos móviles pequeños)
+      'sm': '375px',   // Small (dispositivos móviles)
+      'md': '768px',   // Medium (tablets)
+      'lg': '1024px',  // Large (portátiles y escritorios)
+      'xl': '1440px',  // Extra large (pantallas grandes y alta resolución)
+      '2xl': '1920px', // 2 Extra large (monitores de escritorio muy grandes)
+    },
   },
   plugins: [],
 }
