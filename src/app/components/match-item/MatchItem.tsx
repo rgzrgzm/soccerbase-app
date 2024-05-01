@@ -1,5 +1,5 @@
 import { League } from "@/app/interfaces";
-import MatchCard from "../match-card/MatchCard";
+import { MatchCard } from "@/app/components/match-card/MatchCard";
 
 interface Props {
   item: League;
@@ -13,6 +13,7 @@ export const MatchItem = ({ item }: Props) => {
           <MatchCard
             key={i}
             leagueName={item.league_name}
+            leagueLogo={item.league_logo}
             match={match}
             index={i}
           />

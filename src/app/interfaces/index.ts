@@ -11,6 +11,7 @@ interface Match {
 
 export interface League {
   league_name: string;
+  league_logo: string;
   matches: Match[];
 }
 

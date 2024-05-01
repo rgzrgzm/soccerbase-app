@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // basePath: "/home"
-}
+  images: {
+    domains: ["cdn.sportmonks.com"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

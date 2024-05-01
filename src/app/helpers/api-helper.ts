@@ -9,10 +9,11 @@ export async function getData(): Promise<ApiResponse> {
     });
 
     const res = await data.json();
+    console.log(res)
     return res;
   } catch (error) {
     console.log(error);
 
-    throw new Error("failed to fetch main data");
+    throw new Error("failed to fetch data from api response");
   }
 }

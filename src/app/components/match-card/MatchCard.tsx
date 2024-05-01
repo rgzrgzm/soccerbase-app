@@ -1,5 +1,5 @@
 import clsx from "clsx";
-
+import { LeagueInfo } from "@/app/components/league-info/LeagueInfo";
 interface Match {
   local_team: {
     name: string;
@@ -11,17 +11,19 @@ interface Match {
 
 interface Props {
   leagueName: string;
+  leagueLogo: string;
   index: number;
   match: Match;
 }
 
-export const MatchCard = ({ leagueName, match, index }: Props) => {
+export const MatchCard = ({ leagueName, leagueLogo, match, index }: Props) => {
   const customClassName = clsx(
     "flex",
     "flex-col",
     "border",
     "bg-slate-50",
     "rounded-lg",
+    'shadow-lg',
     {
       "px-2": index == 0,
       "py-3": index == 0,
@@ -32,7 +34,9 @@ export const MatchCard = ({ leagueName, match, index }: Props) => {
 
   return (
     <div className={customClassName}>
-      {index == 0 && <span className="text-[17px]">{leagueName}</span>}
+      {index == 0 && (
+        <LeagueInfo leagueName={leagueName} leagueLogo={leagueLogo} />
+      )}
 
       <div className="flex items-center justify-between mx-auto w-[90%] xs:text-[13px]">
         <div>
