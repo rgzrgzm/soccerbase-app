@@ -10,8 +10,8 @@ export const Navbar = () => {
       <div className="flex justify-between w-full items-center">
         <span className="font-extrabold text-[22px]">Soccerbase</span>
 
-        <div className="xs:flex flex lg:hidden  gap-1 items-center">
-          <LuMoonStar className="xs:block lg:hidden text-[17px]" />
+        <div className="xs:flex flex lg:hidden  gap-[0.50rem] items-center">
+          <LuMoonStar className="xs:block lg:hidden text-[17.5px]" />
 
           <button
             className="lg:hidden ml-auto p-2 focus:outline-none"
