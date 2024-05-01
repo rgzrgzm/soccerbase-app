@@ -7,9 +7,11 @@ interface Props {
 
 export const LeagueInfo = ({ leagueName, leagueLogo }: Props) => {
   return (
-    <div className="flex items-center gap-2">
-      <Image width={25} height={25} src={leagueLogo.trim()} alt={leagueLogo} />
-      <span className="text-[17px]">{leagueName}</span>
+    <div className="flex items-center gap-2 mb-5">
+      <Image
+      className="max-w-[30px]"
+      width={50} height={50} src={leagueLogo.trim()} alt={leagueLogo} />
+      <span className="xs:text-[14px]">{leagueName}</span>
     </div>
   );
 };

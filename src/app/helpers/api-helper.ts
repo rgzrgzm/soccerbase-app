@@ -9,7 +9,6 @@ export async function getData(): Promise<ApiResponse> {
     });
 
     const res = await data.json();
-    console.log(res)
     return res;
   } catch (error) {
     console.log(error);

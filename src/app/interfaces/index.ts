@@ -7,6 +7,7 @@ interface Match {
     name: string;
     logo?: string;
   };
+  match_score: string;
 }
 
 export interface League {

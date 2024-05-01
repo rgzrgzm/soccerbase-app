@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { MdOutlineMenu } from "react-icons/md";
-import { BsMoonStars } from "react-icons/bs";
+import { LuMoonStar } from "react-icons/lu";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +11,7 @@ export const Navbar = () => {
         <span className="font-extrabold text-[22px]">Soccerbase</span>
 
         <div className="xs:flex flex lg:hidden  gap-1 items-center">
-          <BsMoonStars className="xs:block lg:hidden text-[14px]" />
+          <LuMoonStar className="xs:block lg:hidden text-[17px]" />
 
           <button
             className="lg:hidden ml-auto p-2 focus:outline-none"
@@ -22,7 +22,6 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Menú desplegable en pantallas pequeñas y medianas */}
       {isMenuOpen && (
         <div className="lg:hidden absolute top-[4rem] right-0 w-full bg-white border-t border-gray-300">
           {/* Aquí agregarías tus elementos de menú */}
