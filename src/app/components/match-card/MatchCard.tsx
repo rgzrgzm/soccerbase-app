@@ -15,39 +15,17 @@ interface Match {
 }
 
 interface Props {
-  leagueName: string;
-  leagueLogo: string;
-  index: number;
   match: Match;
 }
 
-export const MatchCard = ({ leagueName, leagueLogo, match, index }: Props) => {
-  const customClassName = clsx(
-    "flex",
-    "flex-col",
-    "border",
-    "bg-slate-50",
-    "rounded",
-    "shadow-lg",
-    {
-      "px-2": index == 0,
-      "py-3": index == 0,
-      "px-4": index != 0,
-      "py-4": index != 0,
-    }
-  );
-
+export const MatchCard = ({ match }: Props) => {
   let local_logo = match["local_team"].logo?.trim() ?? "";
   let away_logo = match["away_team"].logo?.trim() ?? "";
 
   return (
-    <div className={customClassName}>
-      {index == 0 && (
-        <LeagueInfo leagueName={leagueName} leagueLogo={leagueLogo} />
-      )}
-
-      <div className="flex items-center justify-between mx-auto w-[90%] xs:text-[13px]">
-        <div className="flex items-center gap-[2px]">
+    <div className="flex flex-col px-4 py-4">
+      <div className="grid grid-cols-3 gap-0 items-center mx-auto px-2">
+        <div className="flex items-center gap-[2px] flex-1 w-ful flex-row-reverse">
           <Image
             width={25}
             height={25}
@@ -62,7 +40,7 @@ export const MatchCard = ({ leagueName, leagueLogo, match, index }: Props) => {
 
         <MatchScore matchScore={match.match_score} />
 
-        <div className="flex items-center gap-[2px]">
+        <div className="flex items-center gap-[2px] flex-1 w-full">
           <Image
             width={25}
             height={25}

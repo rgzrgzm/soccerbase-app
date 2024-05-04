@@ -6,7 +6,7 @@ import { LuMoonStar } from "react-icons/lu";
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="navbar fixed top-0 w-full h-[4rem] px-[1.3rem] py-[0] flex items-center bg-slate-50">
+    <div className="navbar fixed top-0 w-full h-[4rem] px-[1.3rem] py-[0] flex items-center bg-slate-50 shadow-sm">
       <div className="flex justify-between w-full items-center">
         <span className="font-extrabold text-[22px]">Soccerbase</span>
 

@@ -1,12 +1,10 @@
-"use client";
+import { MatchScoreData } from "@/app/interfaces";
 interface Props {
   matchScore: string;
 }
 
 export const MatchScore = ({ matchScore }: Props) => {
-  console.log(matchScore);
-
-  function processElement(elemento: string) {
+  function getMatchScore(elemento: string): MatchScoreData {
     const partes = elemento.split("<b>");
 
     let score = partes[0].trim();
@@ -27,7 +25,39 @@ export const MatchScore = ({ matchScore }: Props) => {
     return { match_time, score };
   }
 
-  console.log("text:", processElement(matchScore));
+  let match_score = getMatchScore(matchScore);
 
-  return <div>...</div>;
+  const MatchScoreItem = ({ match_score }: any) => {
+    if (match_score.score == "") {
+      return (
+        <div className="flex flex-col items-center w-full text-[12px]">
+          <span className="text-gray-400 font-medium">
+            {match_score.match_time}
+          </span>
+        </div>
+      );
+    }
+
+    if (match_score.match_time == "LIVE") {
+      return (
+        <div className="flex justify-center w-full text-[14px]">
+          <span className="text-red-600">{match_score.match_time}</span>
+        </div>
+      );
+    }
+    return (
+      <div className="flex flex-col items-center w-full text-[12px]">
+        <span className="text-gray-300 text-[11px]">
+          {match_score.match_time}
+        </span>
+        <span>{match_score.score}</span>
+      </div>
+    );
+  };
+
+  return (
+    <div className="flex flex-col w-full">
+      <MatchScoreItem match_score={match_score} />
+    </div>
+  );
 };

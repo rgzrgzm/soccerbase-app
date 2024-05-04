@@ -19,3 +19,8 @@ export interface League {
 export interface ApiResponse {
   response: League[];
 }
+
+export interface MatchScoreData {
+  match_time: string;
+  score: string;
+}
