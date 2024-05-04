@@ -7,7 +7,7 @@ interface Props {
 
 export const MatchItem = ({ item }: Props) => {
   return (
-    <div className="flex flex-col gap-0 bg-slate-50 rounded shadow-lg">
+    <div className="flex flex-col gap-0 rounded shadow-lg bg-slate-50">
       <LeagueInfo leagueName={item.league_name} leagueLogo={item.league_logo} />
 
       {item.matches.map((match, i) => {
