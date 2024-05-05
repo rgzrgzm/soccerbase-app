@@ -41,7 +41,9 @@ export const MatchScore = ({ matchScore }: Props) => {
     if (match_score.match_time == "LIVE") {
       return (
         <div className="flex justify-center w-full text-[14px]">
-          <span className="text-red-600">{match_score.match_time}</span>
+          <span className="animate-pulse text-red-600 duration-400">
+            {match_score.match_time}
+          </span>
         </div>
       );
     }
