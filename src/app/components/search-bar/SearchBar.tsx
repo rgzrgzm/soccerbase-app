@@ -2,15 +2,22 @@
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
+import { LeagueOption } from "../league-option/LeagueOption";
 
-export const SearchBar = () => {
+interface leagueInfo {
+  league_name: string;
+  league_logo: string;
+}
+interface Props {
+  leaguesList: leagueInfo[];
+}
+
+export const SearchBar = ({ leaguesList }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-
-  const options = ["Option 1", "Option 2", "Option 3"];
 
   return (
     <div className="flex relative mb-[6px]">
@@ -22,7 +29,7 @@ export const SearchBar = () => {
         aria-haspopup="true"
         aria-expanded="true"
       >
-        All leagues...
+        Leagues...
         <IoIosArrowDown className="font-black" />
       </button>
       <div className="relative ml-[-1px]">
@@ -43,16 +50,9 @@ export const SearchBar = () => {
           aria-orientation="vertical"
           aria-labelledby="options-menu"
         >
-          <div className="py-1" role="none">
-            {options.map((option, index) => (
-              <a
-                key={index}
-                href="#"
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                role="menuitem"
-              >
-                {option}
-              </a>
+          <div className="py-1 h-[200px] overflow-auto" role="none">
+            {leaguesList.map((item, i) => (
+              <LeagueOption key={i} item={item} />
             ))}
           </div>
         </div>

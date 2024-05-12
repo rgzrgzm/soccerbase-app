@@ -1,6 +1,5 @@
 import { League } from "@/app/interfaces";
-import { MatchCard } from "@/app/components/match-card/MatchCard";
-import { LeagueInfo } from "@/app/components";
+import { LeagueInfo, MatchCard } from "@/app/components";
 interface Props {
   item: League;
 }
@@ -8,9 +7,12 @@ interface Props {
 export const MatchItem = ({ item }: Props) => {
   return (
     <div className="flex flex-col gap-0 rounded shadow-lg bg-slate-50">
-      <LeagueInfo leagueName={item.league_name} leagueLogo={item.league_logo} />
+      <LeagueInfo
+        leagueName={item?.league_name}
+        leagueLogo={item?.league_logo}
+      />
 
-      {item.matches.map((match, i) => {
+      {item?.matches?.map((match, i) => {
         return <MatchCard key={i} match={match} />;
       })}
     </div>

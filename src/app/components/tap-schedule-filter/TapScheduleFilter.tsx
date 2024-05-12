@@ -1,10 +1,10 @@
 import React from "react";
 import { SearchBar } from "@/app/components";
 
-export const TapScheduleFilter = async () => {
+export const TapScheduleFilter = ({ leaguesList }: any) => {
   return (
     <div className="flex items-center w-[90%] mx-auto">
-      <SearchBar />
+      <SearchBar leaguesList={leaguesList} />
     </div>
   );
 };

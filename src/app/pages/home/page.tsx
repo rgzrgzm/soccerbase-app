@@ -1,13 +1,21 @@
 import { MatchSchedule, Spinner, TapScheduleFilter } from "@/app/components";
-import { Suspense } from "react";
+import { ApiResponse } from "@/app/interfaces";
 
-const HomePage = () => {
+const HomePage = ({ response }: ApiResponse) => {
+  const matchSchedule = response;
+  const leaguesList = response.map((item) => {
+    return {
+      league_name: item.league_name,
+      league_logo: item.league_logo,
+    };
+  });
   return (
     <div className="h-screen pt-[80px] font-black text-[19px] bg-[#e5e7eb] overflow-auto">
-      <TapScheduleFilter />
-      <Suspense fallback={<Spinner />}>
-        <MatchSchedule />
-      </Suspense>
+      <TapScheduleFilter
+        leaguesList={leaguesList}
+        // ....
+      />
+      <MatchSchedule matchSchedule={matchSchedule} />
     </div>
   );
 };
