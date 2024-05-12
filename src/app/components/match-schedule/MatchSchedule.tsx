@@ -2,7 +2,6 @@ import { League } from "@/app/interfaces";
 import MatchItemContainer from "../match-item-container/MatchItemContainer";
 interface Props {
   matchSchedule: League[];
-  searchParams: URLSearchParams;
 }
 
 export const MatchSchedule = async ({ matchSchedule }: Props) => {
