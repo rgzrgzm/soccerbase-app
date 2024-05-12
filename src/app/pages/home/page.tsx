@@ -3,7 +3,7 @@ import { ApiResponse } from "@/app/interfaces";
 
 const HomePage = ({ response }: ApiResponse) => {
   const matchSchedule = response;
-  const leaguesList = response.map((item) => {
+  const leaguesList = response?.map((item) => {
     return {
       league_name: item.league_name,
       league_logo: item.league_logo,
