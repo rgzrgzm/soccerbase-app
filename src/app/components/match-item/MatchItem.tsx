@@ -10,6 +10,7 @@ export const MatchItem = ({ item }: Props) => {
       <LeagueInfo
         leagueName={item?.league_name}
         leagueLogo={item?.league_logo}
+        color={item?.color}
       />
 
       {item?.matches?.map((match, i) => {

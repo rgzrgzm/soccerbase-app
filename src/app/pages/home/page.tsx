@@ -7,13 +7,14 @@ const HomePage = ({ response }: ApiResponse) => {
     return {
       league_name: item.league_name,
       league_logo: item.league_logo,
+      value: item.league_name,
+      color: item.color,
     };
   });
   return (
-    <div className="h-screen pt-[80px] font-black text-[19px] bg-[#e5e7eb] overflow-auto">
+    <div className="h-screen pt-[80px] font-black text-[19px] bg-[#e5e7eb] overflow-auto pb-150px">
       <TapScheduleFilter
-        leaguesList={leaguesList}
-        // ....
+        leaguesList={[{ league_name: "All", value: "all" }, ...leaguesList]}
       />
       <MatchSchedule matchSchedule={matchSchedule} />
     </div>

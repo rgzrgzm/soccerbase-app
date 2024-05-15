@@ -14,6 +14,7 @@ export interface League {
   league_name: string;
   league_logo: string;
   matches: Match[];
+  color: string;
 }
 
 export interface ApiResponse {

@@ -7,6 +7,8 @@ import { LeagueOption } from "../league-option/LeagueOption";
 interface leagueInfo {
   league_name: string;
   league_logo: string;
+  value: string;
+  color: string;
 }
 interface Props {
   leaguesList: leagueInfo[];
@@ -14,7 +16,6 @@ interface Props {
 
 export const SearchBar = ({ leaguesList }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -32,6 +33,7 @@ export const SearchBar = ({ leaguesList }: Props) => {
         Leagues...
         <IoIosArrowDown className="font-black" />
       </button>
+
       <div className="relative ml-[-1px]">
         <input
           type="text"
@@ -52,7 +54,7 @@ export const SearchBar = ({ leaguesList }: Props) => {
         >
           <div className="py-1 h-[200px] overflow-auto" role="none">
             {leaguesList.map((item, i) => (
-              <LeagueOption key={i} item={item} />
+              <LeagueOption key={i} item={item} setIsOpen={setIsOpen} />
             ))}
           </div>
         </div>

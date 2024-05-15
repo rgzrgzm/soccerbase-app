@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { MdOutlineMenu } from "react-icons/md";
 import { LuMoonStar } from "react-icons/lu";
-import { IoMdSettings } from "react-icons/io";
 import { ViewModeController } from "@/app/components/view-mode-controller/ViewModeController";
 
 export const Navbar = () => {
@@ -45,12 +44,12 @@ export const Navbar = () => {
           <ul className="py-2 px-4">
             <li>
               <a href="#" className="block py-2">
-                Opción 1
+                Optión 1
               </a>
             </li>
             <li>
               <a href="#" className="block py-2">
-                Opción 2
+                Option 2
               </a>
             </li>
             {/* ... */}
@@ -63,16 +62,16 @@ export const Navbar = () => {
           <div className="px-4 font-bold pt-3 flex justify-between items-center">
             <span className="text-[18px]">Display settings</span>
 
-            <IoMdSettings />
+            {/* <IoMdSettings /> */}
           </div>
           <ul className="py-2 px-4 flex flex-col gap-[30px]">
-            <li>
+            {/* <li>
               <div className="block py-2 font-bold">
                 <span className="text-[15px]">Color</span>
               </div>
-            </li>
+            </li> */}
             <li>
-              <div className="w-full py-2 font-bold flex flex-col gap-2">
+              <div className="w-full py-2 font-bold flex flex-col gap-[8px]">
                 <span className="text-[15px]">Background</span>
                 <div className="flex justify-between">
                   {viewModeListNames?.map((item) => (
