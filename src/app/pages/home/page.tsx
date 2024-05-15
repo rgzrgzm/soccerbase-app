@@ -13,9 +13,9 @@ const HomePage = ({ response }: ApiResponse) => {
   });
   return (
     <div className="h-screen pt-[80px] font-black text-[19px] bg-[#e5e7eb] overflow-auto pb-150px">
-      <TapScheduleFilter
+      {/* <TapScheduleFilter
         leaguesList={[{ league_name: "All", value: "all" }, ...leaguesList]}
-      />
+      /> */}
       {/* <MatchSchedule matchSchedule={matchSchedule} /> */}
     </div>
   );
