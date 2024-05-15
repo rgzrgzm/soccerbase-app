@@ -18,7 +18,7 @@ export default async function HomePage() {
       <TapScheduleFilter
         leaguesList={[{ league_name: "All", value: "all" }, ...leaguesList]}
       />
-      {/* <MatchSchedule matchSchedule={matchSchedule} /> */}
+      <MatchSchedule matchSchedule={matchSchedule} />
     </div>
   );
 };
