@@ -1,9 +1,11 @@
 import { MatchSchedule, TapScheduleFilter } from "@/app/components";
-import { ApiResponse } from "@/app/interfaces";
+import { getData } from "@/app/helpers/api-helper";
 
-const HomePage = ({ response }: ApiResponse) => {
-  const matchSchedule = response;
-  const leaguesList = response?.map((item: any) => {
+export default async function HomePage() {
+  const data = await getData();
+
+  const matchSchedule = data.response;
+  const leaguesList = data.response?.map((item) => {
     return {
       league_name: item.league_name,
       league_logo: item.league_logo,
@@ -13,12 +15,11 @@ const HomePage = ({ response }: ApiResponse) => {
   });
   return (
     <div className="h-screen pt-[80px] font-black text-[19px] bg-[#e5e7eb] overflow-auto pb-150px">
-      {/* <TapScheduleFilter
+      <TapScheduleFilter
         leaguesList={[{ league_name: "All", value: "all" }, ...leaguesList]}
-      /> */}
+      />
       {/* <MatchSchedule matchSchedule={matchSchedule} /> */}
     </div>
   );
 };
 
-export default HomePage;
