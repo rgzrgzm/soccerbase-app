@@ -1,4 +1,4 @@
-import { MatchSchedule, Spinner, TapScheduleFilter } from "@/app/components";
+import { MatchSchedule, TapScheduleFilter } from "@/app/components";
 import { ApiResponse } from "@/app/interfaces";
 
 const HomePage = ({ response }: ApiResponse) => {
@@ -16,7 +16,7 @@ const HomePage = ({ response }: ApiResponse) => {
       <TapScheduleFilter
         leaguesList={[{ league_name: "All", value: "all" }, ...leaguesList]}
       />
-      <MatchSchedule matchSchedule={matchSchedule} />
+      {/* <MatchSchedule matchSchedule={matchSchedule} /> */}
     </div>
   );
 };

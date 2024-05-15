@@ -71,7 +71,7 @@ export const Navbar = () => {
               </div>
             </li> */}
             <li>
-              <div className="w-full py-2 font-bold flex flex-col gap-[8px]">
+              <div className="w-full py-2 font-bold flex flex-col gap-[2px]">
                 <span className="text-[15px]">Background</span>
                 <div className="flex justify-between">
                   {viewModeListNames?.map((item) => (
