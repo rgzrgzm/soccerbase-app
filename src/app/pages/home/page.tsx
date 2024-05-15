@@ -1,7 +1,7 @@
 import { MatchSchedule, TapScheduleFilter } from "@/app/components";
 import { ApiResponse } from "@/app/interfaces";
 
-const HomePage = ({ response }: any) => {
+const HomePage = ({ response }: ApiResponse) => {
   const matchSchedule = response;
   const leaguesList = response?.map((item: any) => {
     return {
