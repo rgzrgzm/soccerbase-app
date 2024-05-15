@@ -18,7 +18,7 @@ const MatchItemContainer = ({ matchSchedule }: any) => {
     } else {
       setFilteredMatches(matchSchedule);
     }
-  }, [searchParams]);
+  }, [searchParams, matchSchedule]);
 
   return filteredMatches?.map((item: any, idx: any) => {
     return <MatchItem key={idx} item={item} />;
