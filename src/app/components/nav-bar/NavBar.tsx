@@ -14,7 +14,10 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <div className="navbar z-[999] fixed top-0 w-full h-[4rem] px-[1.3rem] py-[0] flex items-center bg-slate-50 shadow-sm">
+    <div
+      className=" navbar z-[999] fixed top-0 w-full h-[4rem] px-[1.3rem] py-[0] flex items-center bg-slate-50 shadow-sm"
+      style={{ display: "none" }}
+    >
       <div className="flex justify-between w-full items-center">
         <span className="font-extrabold text-[22px]">Soccerbase</span>
 
@@ -60,7 +63,7 @@ export const Navbar = () => {
       {isOpenViewMode && (
         <div className="lg:hidden absolute top-[4rem] right-0 w-full bg-white border-t border-gray-300 shadow-md">
           <div className="px-4 font-bold pt-3 flex justify-between items-center">
-            <span className="text-[18px]">Display settings</span>
+            <span className="text-[18px]">Change theme</span>
 
             {/* <IoMdSettings /> */}
           </div>

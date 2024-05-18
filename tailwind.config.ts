@@ -13,6 +13,14 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'theme-white': '#ffffff',
+        'theme-dark-blue': '#15202b',
+        'theme-black': '#000000',
+        'secondary-white': '#f0f0f0', // Example secondary color for white theme
+        'secondary-dark-blue': '#1e2a35', // Example secondary color for dark blue theme
+        'secondary-black': '#2a2a2a', // Example secondary color for black theme
+      },
     },
     screens: {
       'xs': '0px',     // Extra small (dispositivos móviles pequeños)

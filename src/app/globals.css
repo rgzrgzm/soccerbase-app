@@ -6,3 +6,19 @@
 body {
   background: #f8fafc;
 }
+
+
+html.theme-white {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+html.theme-dark-blue {
+  background-color: #15202b;
+  color: #ffffff;
+}
+
+html.theme-black {
+  background-color: #000000;
+  color: #ffffff;
+}
