@@ -13,9 +13,9 @@ export default async function HomePage() {
       color: item.color,
     };
   });
-  let backgroundColor = 'bg-[#e5e7eb]'
+  // let originalBackgroundSoftWhite = 'bg-[#e5e7eb]'
   return (
-    <div className="h-screen pt-[80px] font-black text-[19px] overflow-auto pb-150px">
+    <div className={`h-screen pt-[80px] font-black text-[19px] overflow-auto pb-150px`}>
       <TapScheduleFilter
         leaguesList={[{ league_name: "All", value: "all" }, ...leaguesList]}
       />

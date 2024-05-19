@@ -2,23 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
+html .input-league-filter {
+  color: #000;
+}
 
-body {
+html.night-blue {
+  --bg-color: #15202b;
+  --text-color: #ffffff;
+  --secondary-bg-color: #324e8a;
+  --secondary-text-color: #cccccc;
+}
+
+html.night-blue .navbar {
+  background: #15202b;
+}
+
+html.night-blue .navbar-theme-option {
+  background: #15202b;
+}
+
+html.night-blue .bg-match-item {
+  background: #1e2a35;
+}
+
+html.light {
+  --bg-color: #e5e7eb;
+  --text-color: #000000;
+  --secondary-bg-color: green; /* Secondary background color for light theme */
+  --secondary-text-color: #333333;
+}
+
+html.light .navbar {
+  background: #f8fafc;
+}
+
+html.light .bg-match-item {
+  background: #f8fafc;
+}
+
+html.light .navbar-theme-option {
   background: #f8fafc;
 }
 
 
-html.theme-white {
-  background-color: #ffffff;
-  color: #000000;
+html.dark {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --secondary-bg-color: #333333; /* Secondary background color for dark theme */
+  --secondary-text-color: #aaaaaa;
 }
 
-html.theme-dark-blue {
-  background-color: #15202b;
-  color: #ffffff;
+html.dark .navbar {
+  background: #000000;
 }
 
-html.theme-black {
-  background-color: #000000;
-  color: #ffffff;
+html.dark .navbar-theme-option {
+  background: #000000;
+}
+
+html.dark .bg-match-item {
+  background: #2a2a2a;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.secondary-bg {
+  background-color: var(--secondary-bg-color);
+}
+
+.secondary-text {
+  color: var(--secondary-text-color);
 }

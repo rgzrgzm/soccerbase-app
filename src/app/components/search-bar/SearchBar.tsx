@@ -16,6 +16,7 @@ interface Props {
 
 export const SearchBar = ({ leaguesList }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -25,20 +26,20 @@ export const SearchBar = ({ leaguesList }: Props) => {
       <button
         onClick={toggleDropdown}
         type="button"
-        className="inline-flex items-center justify-center w-[50%] rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-[13px] truncate font-medium text-gray-700 rounded-r-none rounded-br-none"
+        className="bg-slate-50 input-league-filter inline-flex items-center justify-center w-[50%] rounded-md border  shadow-sm px-4 py-2 text-[13px] truncate font-medium  rounded-r-none rounded-br-none"
         id="options-menu"
         aria-haspopup="true"
         aria-expanded="true"
       >
         Leagues...
-        <IoIosArrowDown className="font-black" />
+        <IoIosArrowDown />
       </button>
 
       <div className="relative ml-[-1px]">
         <input
           type="text"
           placeholder="Search..."
-          className="block w-full pr-10 py-2 pl-3 border font-medium border-gray-300 rounded-md shadow-sm sm:text-sm rounded-l-none rounded-bl-none outline-none"
+          className="block w-full pr-10 py-2 pl-3 border font-medium  rounded-md shadow-sm sm:text-sm rounded-l-none rounded-bl-none outline-none"
         />
         <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
           <FaSearch className="text-gray-300" />

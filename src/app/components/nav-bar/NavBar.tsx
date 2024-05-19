@@ -16,7 +16,7 @@ export const Navbar = () => {
   return (
     <div
       className=" navbar z-[999] fixed top-0 w-full h-[4rem] px-[1.3rem] py-[0] flex items-center bg-slate-50 shadow-sm"
-      style={{ display: "none" }}
+      // style={{ display: "none" }}
     >
       <div className="flex justify-between w-full items-center">
         <span className="font-extrabold text-[22px]">Soccerbase</span>
@@ -43,7 +43,7 @@ export const Navbar = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-[4rem] right-0 w-full bg-white border-t border-gray-300">
+        <div className="navbar-theme-option lg:hidden absolute top-[4rem] right-0 w-full bg-white border-t border-gray-300">
           <ul className="py-2 px-4">
             <li>
               <a href="#" className="block py-2">
@@ -61,9 +61,9 @@ export const Navbar = () => {
       )}
 
       {isOpenViewMode && (
-        <div className="lg:hidden absolute top-[4rem] right-0 w-full bg-white border-t border-gray-300 shadow-md">
+        <div className="navbar-theme-option lg:hidden absolute top-[4rem] right-0 w-full bg-white border-t border-gray-300 shadow-md">
           <div className="px-4 font-bold pt-3 flex justify-between items-center">
-            <span className="text-[18px]">Change theme</span>
+            <span className="text-[18px]">Background theme</span>
 
             {/* <IoMdSettings /> */}
           </div>
@@ -75,7 +75,6 @@ export const Navbar = () => {
             </li> */}
             <li>
               <div className="w-full py-2 font-bold flex flex-col gap-[2px]">
-                <span className="text-[15px]">Background</span>
                 <div className="flex justify-between">
                   {viewModeListNames?.map((item) => (
                     <ViewModeController key={item} name={item} />

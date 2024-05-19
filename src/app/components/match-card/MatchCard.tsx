@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { LeagueInfo, MatchScore } from "@/app/components";
 import Image from "next/image";
 

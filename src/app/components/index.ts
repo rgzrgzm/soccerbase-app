@@ -8,4 +8,3 @@ export * from "./search-bar/SearchBar";
 export * from "./tap-schedule-filter/TapScheduleFilter";
 export * from "./spinner/Spinner";
 export * from "./view-mode-controller/ViewModeController";
-export * from "./ThemeToggle/ThemeToggle";
