@@ -15,7 +15,7 @@ export default async function HomePage() {
   });
   // let originalBackgroundSoftWhite = 'bg-[#e5e7eb]'
   return (
-    <div className={`pt-[20px] font-black text-[19px] overflow-auto pb-150px background-container`} 
+    <div className={`pt-[20px] font-black text-[19px] overflow-auto pb-150px background-container mt-[60px]`} 
     // style={{background:'blue'}}
     >
       <TapScheduleFilter

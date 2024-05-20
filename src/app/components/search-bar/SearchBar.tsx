@@ -39,7 +39,7 @@ export const SearchBar = ({ leaguesList }: Props) => {
         <input
           type="text"
           placeholder="Search..."
-          className="block w-full pr-10 py-2 pl-3 border font-medium  rounded-md shadow-sm sm:text-sm rounded-l-none rounded-bl-none outline-none"
+          className="block w-[100%] pr-10 py-2 pl-3 border font-medium  rounded-md shadow-sm sm:text-sm rounded-l-none rounded-bl-none outline-none"
         />
         <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
           <FaSearch className="text-gray-300" />
