@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  padding-top: 60px;
+  background: #f8fafc;
+}
+
 html .input-league-filter {
   color: #000;
 }
@@ -11,6 +16,10 @@ html.night-blue {
   --text-color: #ffffff;
   --secondary-bg-color: #324e8a;
   --secondary-text-color: #cccccc;
+}
+
+html.night-blue .background-container {
+  background: #15202b;
 }
 
 html.night-blue .navbar {
@@ -25,11 +34,16 @@ html.night-blue .bg-match-item {
   background: #1e2a35;
 }
 
+/* #e5e7eb */
 html.light {
-  --bg-color: #e5e7eb;
+  --bg-color: #f8fafc;
   --text-color: #000000;
   --secondary-bg-color: green; /* Secondary background color for light theme */
   --secondary-text-color: #333333;
+}
+
+html.light .background-container {
+  background: #e5e7eb;
 }
 
 html.light .navbar {
@@ -44,12 +58,15 @@ html.light .navbar-theme-option {
   background: #f8fafc;
 }
 
-
 html.dark {
   --bg-color: #000000;
   --text-color: #ffffff;
   --secondary-bg-color: #333333; /* Secondary background color for dark theme */
   --secondary-text-color: #aaaaaa;
+}
+
+html.dark .background-container {
+  background: #000000;
 }
 
 html.dark .navbar {
