@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import { LeagueOption } from "../league-option/LeagueOption";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 interface leagueInfo {
   league_name: string;
@@ -17,8 +18,18 @@ interface Props {
 export const SearchBar = ({ leaguesList }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleSearch = (query: string) => {
+    const params = new URLSearchParams(searchParams);
+    params.set("search", query);
+    replace(`${pathname}?${params.toString()}`);
   };
 
   return (
@@ -37,6 +48,7 @@ export const SearchBar = ({ leaguesList }: Props) => {
 
       <div className="relative ml-[-1px]">
         <input
+          onChange={(e) => handleSearch(e.target.value)}
           type="text"
           placeholder="Search..."
           className="block w-[100%] pr-10 py-2 pl-3 border font-medium  rounded-md shadow-sm sm:text-sm rounded-l-none rounded-bl-none outline-none"
