@@ -19,40 +19,41 @@ const MatchItemContainer = ({ matchSchedule }: { matchSchedule: League[] }) => {
     } else {
       setFilteredMatches(matchSchedule);
     }
-  }, [searchParams, matchSchedule]);
+  }, [searchParams]);
 
   useEffect(() => {
     const params = searchParams.get("search");
+    if (params) {
+      const lowerCaseQuery = params?.toLowerCase();
 
-    const lowerCaseQuery = params?.toLowerCase();
-
-    if (lowerCaseQuery) {
-      const filteredData = matchSchedule.reduce(
-        (acc: League[], league: League) => {
-          const matchesInLeague = league.matches.filter((match: any) => {
-            return (
-              match.local_team.name.toLowerCase().includes(lowerCaseQuery) ||
-              match.away_team.name.toLowerCase().includes(lowerCaseQuery)
-            );
-          });
-
-          if (league.league_name.toLowerCase().includes(lowerCaseQuery)) {
-            acc.push(league);
-          } else if (matchesInLeague.length > 0) {
-            acc.push({
-              ...league,
-              matches: matchesInLeague,
+      if (lowerCaseQuery) {
+        const filteredData = matchSchedule.reduce(
+          (acc: League[], league: League) => {
+            const matchesInLeague = league.matches.filter((match: any) => {
+              return (
+                match.local_team.name.toLowerCase().includes(lowerCaseQuery) ||
+                match.away_team.name.toLowerCase().includes(lowerCaseQuery)
+              );
             });
-          }
 
-          return acc;
-        },
-        []
-      );
+            if (league.league_name.toLowerCase().includes(lowerCaseQuery)) {
+              acc.push(league);
+            } else if (matchesInLeague.length > 0) {
+              acc.push({
+                ...league,
+                matches: matchesInLeague,
+              });
+            }
 
-      setFilteredMatches(filteredData);
-    } else {
-      setFilteredMatches(matchSchedule);
+            return acc;
+          },
+          []
+        );
+
+        setFilteredMatches(filteredData);
+      } else {
+        setFilteredMatches(matchSchedule);
+      }
     }
   }, [searchParams, matchSchedule]);
 

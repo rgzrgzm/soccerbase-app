@@ -28,8 +28,19 @@ export const SearchBar = ({ leaguesList }: Props) => {
 
   const handleSearch = (query: string) => {
     const params = new URLSearchParams(searchParams);
-    params.set("search", query);
-    replace(`${pathname}?${params.toString()}`);
+
+    if (query == "") {
+      params.delete("search");
+      // Si no hay otros parámetros, simplemente reemplaza con la ruta base
+      if (params.toString() === "") {
+        replace(`${pathname}`);
+      } else {
+        replace(`${pathname}?${params.toString()}`);
+      }
+    } else {
+      params.set("search", query);
+      replace(`${pathname}?${params.toString()}`);
+    }
   };
 
   return (
@@ -37,7 +48,7 @@ export const SearchBar = ({ leaguesList }: Props) => {
       <button
         onClick={toggleDropdown}
         type="button"
-        className="bg-slate-50 input-league-filter inline-flex items-center justify-center w-[50%] rounded-md border  shadow-sm px-4 py-2 text-[13px] truncate font-medium  rounded-r-none rounded-br-none"
+        className="bg-slate-50 input-league-filter inline-flex items-center justify-center w-[50%] rounded-md border  shadow-sm px-4 py-2 text-[13px] truncate font-medium  rounded-r-none rounded-br-none md:w-[200px]"
         id="options-menu"
         aria-haspopup="true"
         aria-expanded="true"
@@ -46,12 +57,12 @@ export const SearchBar = ({ leaguesList }: Props) => {
         <IoIosArrowDown />
       </button>
 
-      <div className="relative ml-[-1px]">
+      <div className="relative ml-[-1px] md:w-[520px]">
         <input
           onChange={(e) => handleSearch(e.target.value)}
           type="text"
           placeholder="Search..."
-          className="block w-[100%] pr-10 py-2 pl-3 border font-medium  rounded-md shadow-sm sm:text-sm rounded-l-none rounded-bl-none outline-none"
+          className="block w-[100%] pr-10 py-2 pl-3 border font-medium  rounded-md shadow-sm sm:text-sm rounded-l-none rounded-bl-none outline-none text-[#000]"
         />
         <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
           <FaSearch className="text-gray-300" />

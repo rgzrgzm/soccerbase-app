@@ -15,13 +15,15 @@ export default async function HomePage() {
   });
   // let originalBackgroundSoftWhite = 'bg-[#e5e7eb]'
   return (
-    <div className={`pt-[20px] font-black text-[19px] overflow-auto pb-150px background-container mt-[60px]`} 
+    <div
+      className={`pt-[20px] font-black text-[19px] overflow-auto pb-150px background-container mt-[60px]`}
     >
-      <TapScheduleFilter
-        leaguesList={[{ league_name: "All", value: "all" }, ...leaguesList]}
-      />
-      <MatchSchedule matchSchedule={matchSchedule} />
+      <div className="md:w-[800px] md:mx-auto">
+        <TapScheduleFilter
+          leaguesList={[{ league_name: "All", value: "all" }, ...leaguesList]}
+        />
+        <MatchSchedule matchSchedule={matchSchedule} />
+      </div>
     </div>
   );
-};
-
+}
